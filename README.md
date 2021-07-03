@@ -13,6 +13,15 @@ pojo
     @TableLogic
     private Boolean isDeleted;
 ```
+2. Pagination(limit)
+config
+``` java
+    @Bean
+    public PaginationInterceptor paginationInterceptor() {
+        return new PaginationInterceptor();
+    }
+```
+
 ### Swagger interface test
 1. Create maven under main project
 2. Create swagger
@@ -110,3 +119,17 @@ public class R {
 ```
 3. Add dependency to test maven pom
 4. Use swagger to test
+
+### Pagination(limit)
+``` java
+    @GetMapping("/pageTeacher/{current}/{limit}")
+    public R pageListTeacher(@PathVariable Integer current, @PathVariable Integer limit) {
+        Page<EduTeacher> pageTeacher = new Page<EduTeacher>(current, limit);
+        eduTeacherService.page(pageTeacher, null);
+
+        long total = pageTeacher.getTotal();
+        List<EduTeacher> records = pageTeacher.getRecords();
+
+        return R.ok().data("total",total).data("list", records);
+    }
+```

@@ -1,5 +1,6 @@
 package com.shun.eduservice.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.shun.commonutils.R;
 import com.shun.eduservice.entity.EduTeacher;
 import com.shun.eduservice.service.EduTeacherService;
@@ -38,6 +39,18 @@ public class EduTeacherController {
             return R.error();
         }
     }
+
+    @GetMapping("/pageTeacher/{current}/{limit}")
+    public R pageListTeacher(@PathVariable Integer current, @PathVariable Integer limit) {
+        Page<EduTeacher> pageTeacher = new Page<EduTeacher>(current, limit);
+        eduTeacherService.page(pageTeacher, null);
+
+        long total = pageTeacher.getTotal();
+        List<EduTeacher> records = pageTeacher.getRecords();
+
+        return R.ok().data("total",total).data("list", records);
+    }
+
 
 }
 
