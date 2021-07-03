@@ -1,4 +1,10 @@
 # project
+### primary key snowflake
+``` java 
+    @TableId(value = "id", type = IdType.ID_WORKER_STR)
+    private String id;
+```
+
 ### Config
 1. Logical delete
 config
@@ -21,6 +27,30 @@ config
         return new PaginationInterceptor();
     }
 ```
+
+### Handler
+pojo
+``` java
+    @TableField(fill = FieldFill.INSERT)
+    private Date gmtCreate;
+
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private Date gmtModified;
+```
+handler
+``` java
+    public class MyMetaObjectHandler implements MetaObjectHandler {
+    public void insertFill(MetaObject metaObject) {
+        this.setFieldValByName("gmtCreate", new Date(), metaObject);
+        this.setFieldValByName("gmtModified", new Date(), metaObject);
+    }
+
+    public void updateFill(MetaObject metaObject) {
+        this.setFieldValByName("gmtModified", new Date(), metaObject);
+    }
+}
+```
+Add @ComponentScan(basePackages = {"com.shun"}) under @SpringBootApplication
 
 ### Swagger interface test
 1. Create maven under main project
@@ -54,7 +84,7 @@ public class SwaggerConfig {
 }
 ```
 3. Add dependency to test maven pom
-4. Add @ComponentScan(basePackages = {"com.shun"})
+4. Add @ComponentScan(basePackages = {"com.shun"}) under @SpringBootApplication
 5. url(http://localhost:8001/swagger-ui.html)
 
 ### Unified return interface
@@ -130,6 +160,41 @@ public class R {
         long total = pageTeacher.getTotal();
         List<EduTeacher> records = pageTeacher.getRecords();
 
+        return R.ok().data("total",total).data("list", records);
+    }
+```
+
+### Query by condition
+``` java
+    PostMapping("/pageTeacherCondition/{current}/{limit}")
+    public R pageListTeacherCondition(@PathVariable Integer current,
+                                      @PathVariable Integer limit,
+                                      @RequestBody(required = false) TeacherQuery teacherQuery) {
+        Page<EduTeacher> pageTeacher = new Page<EduTeacher>(current, limit);
+        QueryWrapper<EduTeacher> wrapper = new QueryWrapper<>();
+
+        String name = teacherQuery.getName();
+        Integer level = teacherQuery.getLevel();
+        String begin = teacherQuery.getBegin();
+        String end = teacherQuery.getEnd();
+
+        if(!StringUtils.isEmpty(name)) {
+            wrapper.like("name", name);
+        }
+        if(level != null) {
+            wrapper.eq("level", level);
+        }
+        if(!StringUtils.isEmpty(begin)) {
+            wrapper.ge("gmt_create", begin);
+        }
+        if(!StringUtils.isEmpty(end)) {
+            wrapper.le("gmt_modified", end);
+        }
+
+        eduTeacherService.page(pageTeacher, wrapper);
+
+        long total = pageTeacher.getTotal();
+        List<EduTeacher> records = pageTeacher.getRecords();
         return R.ok().data("total",total).data("list", records);
     }
 ```

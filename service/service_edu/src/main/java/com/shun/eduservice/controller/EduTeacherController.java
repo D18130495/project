@@ -1,9 +1,12 @@
 package com.shun.eduservice.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.shun.commonutils.R;
 import com.shun.eduservice.entity.EduTeacher;
+import com.shun.eduservice.entity.vo.TeacherQuery;
 import com.shun.eduservice.service.EduTeacherService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -47,10 +50,51 @@ public class EduTeacherController {
 
         long total = pageTeacher.getTotal();
         List<EduTeacher> records = pageTeacher.getRecords();
-
         return R.ok().data("total",total).data("list", records);
     }
 
+    @PostMapping("/pageTeacherCondition/{current}/{limit}")
+    public R pageListTeacherCondition(@PathVariable Integer current,
+                                      @PathVariable Integer limit,
+                                      @RequestBody(required = false) TeacherQuery teacherQuery) {
+        Page<EduTeacher> pageTeacher = new Page<EduTeacher>(current, limit);
+        QueryWrapper<EduTeacher> wrapper = new QueryWrapper<>();
+
+        String name = teacherQuery.getName();
+        Integer level = teacherQuery.getLevel();
+        String begin = teacherQuery.getBegin();
+        String end = teacherQuery.getEnd();
+
+        if(!StringUtils.isEmpty(name)) {
+            wrapper.like("name", name);
+        }
+        if(level != null) {
+            wrapper.eq("level", level);
+        }
+        if(!StringUtils.isEmpty(begin)) {
+            wrapper.ge("gmt_create", begin);
+        }
+        if(!StringUtils.isEmpty(end)) {
+            wrapper.le("gmt_modified", end);
+        }
+
+        eduTeacherService.page(pageTeacher, wrapper);
+
+        long total = pageTeacher.getTotal();
+        List<EduTeacher> records = pageTeacher.getRecords();
+        return R.ok().data("total",total).data("list", records);
+    }
+
+    @PostMapping("/addTeacher")
+    public R addTeacher(@RequestBody(required = false)EduTeacher eduTeacher) {
+        boolean save = eduTeacherService.save(eduTeacher);
+
+        if(save) {
+            return R.ok();
+        } else {
+            return R.error();
+        }
+    }
 
 }
 
