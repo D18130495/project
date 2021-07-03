@@ -52,6 +52,18 @@ handler
 ```
 Add @ComponentScan(basePackages = {"com.shun"}) under @SpringBootApplication
 
+### Exception handler
+``` java
+    @RestControllerAdvice
+    public class GlobalExceptionHandler{
+        @ExceptionHandler(Exception.class)
+        public R error(Exception e) {
+            e.printStackTrace();
+            return R.error().message("执行了全局异常处理器");
+        }
+    }
+```
+
 ### Swagger interface test
 1. Create maven under main project
 2. Create swagger
