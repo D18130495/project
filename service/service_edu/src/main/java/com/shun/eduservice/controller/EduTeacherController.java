@@ -96,5 +96,24 @@ public class EduTeacherController {
         }
     }
 
+    @GetMapping("/getTeacher/{id}")
+    public R getTeacher(@PathVariable String id) {
+        EduTeacher eduTeacher = eduTeacherService.getById(id);
+        if(eduTeacher != null) {
+            return R.ok().data("teacher", eduTeacher);
+        } else {
+            return R.error();
+        }
+    }
+
+    @PostMapping("/updateTeacher")
+    public R updateTeacher(@RequestBody EduTeacher eduTeacher) {
+        boolean flag = eduTeacherService.updateById(eduTeacher);
+        if(flag) {
+            return R.ok();
+        } else {
+            return R.error();
+        }
+    }
 }
 
