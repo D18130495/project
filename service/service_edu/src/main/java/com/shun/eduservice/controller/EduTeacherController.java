@@ -4,10 +4,7 @@ package com.shun.eduservice.controller;
 import com.shun.eduservice.entity.EduTeacher;
 import com.shun.eduservice.service.EduTeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +27,12 @@ public class EduTeacherController {
     public List<EduTeacher> findAllTeacher() {
         List<EduTeacher> list = eduTeacherService.list(null);
         return list;
+    }
+
+    @DeleteMapping("/{id}")
+    public boolean deleteTeacher(@PathVariable String id) {
+        boolean flag = eduTeacherService.removeById(id);
+        return flag;
     }
 
 }

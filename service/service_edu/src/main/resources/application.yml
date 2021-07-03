@@ -17,6 +17,11 @@ spring:
     username: root
     password: qpuur990415
 
+  # 时间配置
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
   #mybatis日志
 mybatis-plus:
   configuration:
