@@ -1,0 +1,84 @@
+2021-07-05 12:06:20.559 [main] INFO  com.shun.eduservice.EduApplication - Starting EduApplication using Java 1.8.0 on DESKTOP-6IOIL19 with PID 4364 (D:\桌面文件\selfStudy\project\service\service_edu\target\classes started by 丨画若雨幕丨 in D:\桌面文件\selfStudy\project)
+2021-07-05 12:06:20.586 [main] INFO  com.shun.eduservice.EduApplication - The following profiles are active: dev
+2021-07-05 12:06:21.858 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-05 12:06:21.861 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-07-05 12:06:21.887 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-07-05 12:06:22.790 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2021-07-05 12:06:22.800 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2021-07-05 12:06:22.801 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-07-05 12:06:22.801 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-05 12:06:22.802 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.28] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2021-07-05 12:06:22.803 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.28] using APR version [1.7.0].
+2021-07-05 12:06:22.803 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2021-07-05 12:06:22.804 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-05 12:06:22.880 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-05 12:06:23.149 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-07-05 12:06:23.150 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2503 ms
+2021-07-05 12:06:23.367 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-07-05 12:06:24.346 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-07-05 12:06:24.863 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-07-05 12:06:25.670 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2021-07-05 12:06:25.689 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2021-07-05 12:06:25.690 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-07-05 12:06:25.708 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-07-05 12:06:25.745 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-07-05 12:06:25.917 [main] INFO  com.shun.eduservice.EduApplication - Started EduApplication in 6.166 seconds (JVM running for 7.208)
+2021-07-05 12:07:07.469 [http-nio-8001-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-05 12:07:07.469 [http-nio-8001-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-07-05 12:07:07.470 [http-nio-8001-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-07-05 12:11:24.166 [main] INFO  com.shun.eduservice.EduApplication - Starting EduApplication using Java 1.8.0 on DESKTOP-6IOIL19 with PID 7184 (D:\桌面文件\selfStudy\project\service\service_edu\target\classes started by 丨画若雨幕丨 in D:\桌面文件\selfStudy\project)
+2021-07-05 12:11:24.172 [main] INFO  com.shun.eduservice.EduApplication - The following profiles are active: dev
+2021-07-05 12:11:25.592 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-05 12:11:25.594 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-07-05 12:11:25.614 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2021-07-05 12:11:26.141 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2021-07-05 12:11:26.152 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2021-07-05 12:11:26.153 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-07-05 12:11:26.154 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-05 12:11:26.156 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.28] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2021-07-05 12:11:26.156 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.28] using APR version [1.7.0].
+2021-07-05 12:11:26.156 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2021-07-05 12:11:26.156 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-05 12:11:26.160 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-05 12:11:26.291 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-07-05 12:11:26.291 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2035 ms
+2021-07-05 12:11:26.483 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-07-05 12:11:27.181 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-07-05 12:11:27.742 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-07-05 12:11:28.255 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2021-07-05 12:11:28.273 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2021-07-05 12:11:28.275 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-07-05 12:11:28.289 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-07-05 12:11:28.330 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-07-05 12:11:28.485 [main] INFO  com.shun.eduservice.EduApplication - Started EduApplication in 5.025 seconds (JVM running for 5.808)
+2021-07-05 12:11:51.743 [http-nio-8001-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-05 12:11:51.743 [http-nio-8001-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-07-05 12:11:51.745 [http-nio-8001-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-07-05 21:48:40.659 [main] INFO  com.shun.eduservice.EduApplication - Starting EduApplication using Java 1.8.0 on DESKTOP-6IOIL19 with PID 16584 (D:\桌面文件\selfStudy\project\service\service_edu\target\classes started by 丨画若雨幕丨 in D:\桌面文件\selfStudy\project)
+2021-07-05 21:48:40.675 [main] INFO  com.shun.eduservice.EduApplication - The following profiles are active: dev
+2021-07-05 21:48:43.518 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-05 21:48:43.521 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-07-05 21:48:43.567 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2021-07-05 21:48:44.786 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2021-07-05 21:48:44.797 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2021-07-05 21:48:44.798 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-07-05 21:48:44.798 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-05 21:48:44.801 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.28] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2021-07-05 21:48:44.802 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.28] using APR version [1.7.0].
+2021-07-05 21:48:44.802 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2021-07-05 21:48:44.802 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-05 21:48:44.946 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-05 21:48:45.325 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-07-05 21:48:45.325 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4241 ms
+2021-07-05 21:48:45.527 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-07-05 21:48:46.416 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-07-05 21:48:46.997 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-07-05 21:48:47.546 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2021-07-05 21:48:47.572 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2021-07-05 21:48:47.573 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-07-05 21:48:47.595 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-07-05 21:48:47.637 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-07-05 21:48:47.834 [main] INFO  com.shun.eduservice.EduApplication - Started EduApplication in 8.452 seconds (JVM running for 9.796)
+2021-07-05 21:48:47.895 [http-nio-8001-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-05 21:48:47.896 [http-nio-8001-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-07-05 21:48:47.897 [http-nio-8001-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms

@@ -403,3 +403,70 @@ public class R {
         return R.ok().data("total",total).data("list", records);
     }
 ```
+
+### EasyExcel
+1. write
+- Pojo
+``` java
+    @ExcelProperty("学生编号")
+    private Integer sno;
+
+    @ExcelProperty("学生姓名")
+    private String sname;
+```
+- Test
+``` java
+    public static void main(String[] args) {
+        String fileName = "E:\\write.xlsx";
+        EasyExcel.write(fileName, DemoDate.class).sheet("学生列表").doWrite(getList());
+    }
+```
+
+2. read
+- Listener
+``` java
+    public class ExcelListener extends AnalysisEventListener<DemoDate> {
+    //line by line
+    public void invoke(DemoDate demoDate, AnalysisContext analysisContext) {
+        System.out.println("****" + demoDate);
+    }
+
+    //read head
+    public void invokeHeadMap(Map<Integer, String> headMap, AnalysisContext context) {
+        System.out.println("表头" + headMap);
+    }
+
+    //after read
+    public void doAfterAllAnalysed(AnalysisContext analysisContext) {
+
+    }
+}
+```
+
+- Test
+``` java
+        String fileName = "E:\\write.xlsx";
+        EasyExcel.read(fileName, DemoDate.class, new ExcelListener()).sheet().doRead(); 
+```
+
+### Text style
+- Add components and static
+- Edit build/webpack.dev.conf.js under HtmlWebpagePlugin
+``` vue
+      templateParameters: {
+        BASE_URL: config.dev.assetsPublicPath + config.dev.assetsSubDirectory
+      }
+```
+
+- Edit index.html with in the body
+``` vue
+    <script src=<%= BASE_URL %>/tinymce4.7.5/tinymce.min.js></script>
+    <script src=<%= BASE_URL %>/tinymce4.7.5/langs/zh_CN.js></script>
+```
+
+- Import in to .vue
+``` vue
+    import Tinymce from '@/components/Tinymce'
+    
+    components: { Tinymce },
+```
